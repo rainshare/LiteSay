@@ -1,0 +1,28 @@
+<button
+  class="trigger"
+  type="button"
+  title="Click to translate selected text"
+  aria-label="Translate selection"
+  aria-haspopup="dialog"
+  hidden
+></button>
+<section class="card" role="dialog" aria-label="Selection translation" hidden>
+  <div class="header">
+    <span class="brand" aria-hidden="true">{{icon:translate}}</span>
+    <strong>Selection translation</strong
+    ><button class="service" type="button" title="Open service settings">
+      Translation service ↗</button
+    ><button class="close" type="button" aria-label="Close selection translation">
+      {{icon:close}}
+    </button>
+  </div>
+  <div class="source" data-i18n-ignore></div>
+  <div class="result" data-i18n-ignore role="status" aria-live="polite"></div>
+  <div class="footer">
+    <span class="info"></span>
+    <div class="actions">
+      <button class="retry" type="button" hidden>Retry</button
+      ><button class="copy" type="button" disabled>Copy translation</button>
+    </div>
+  </div>
+</section>

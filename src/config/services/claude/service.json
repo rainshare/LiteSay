@@ -1,0 +1,10 @@
+{
+  "kind": "llm",
+  "label": "Claude",
+  "protocol": "claude",
+  "endpoint": "https://api.anthropic.com/v1/messages",
+  "model": "claude-haiku-4-5",
+  "thinkingProtocol": "model",
+  "needsKey": true,
+  "description": "Claude official API."
+}

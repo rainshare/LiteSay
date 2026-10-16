@@ -1,0 +1,50 @@
+{
+  "label": "DeepSeek · thinking",
+  "defaultLevel": "off",
+  "notice": "services.reasoningHelp",
+  "levels": [
+    {
+      "id": "off",
+      "label": "services.reasoningOff",
+      "enabled": false,
+      "body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    },
+    {
+      "id": "low",
+      "label": "services.reasoningLow",
+      "enabled": true,
+      "body": {
+        "thinking": {
+          "type": "enabled"
+        },
+        "reasoning_effort": "low"
+      }
+    },
+    {
+      "id": "high",
+      "label": "services.reasoningHigh",
+      "enabled": true,
+      "body": {
+        "thinking": {
+          "type": "enabled"
+        },
+        "reasoning_effort": "high"
+      }
+    },
+    {
+      "id": "max",
+      "label": "services.reasoningMax",
+      "enabled": true,
+      "body": {
+        "thinking": {
+          "type": "enabled"
+        },
+        "reasoning_effort": "max"
+      }
+    }
+  ]
+}

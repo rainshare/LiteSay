@@ -1,0 +1,50 @@
+{
+  "microsoft": {
+    "file": "assets/providers/microsoft.svg",
+    "color": "#26313c"
+  },
+  "google": {
+    "file": "assets/providers/google.svg",
+    "color": "#26313c"
+  },
+  "deepseek": {
+    "file": "assets/providers/deepseek.svg",
+    "color": "#4d6bfe"
+  },
+  "openai": {
+    "file": "assets/providers/openai.svg",
+    "color": "#26313c"
+  },
+  "qwen": {
+    "file": "assets/providers/qwen.svg",
+    "color": "#8b5cf6"
+  },
+  "custom": {
+    "file": "assets/providers/openai.svg",
+    "color": "#26313c"
+  },
+  "claude": {
+    "file": "assets/providers/claude.svg",
+    "color": "#d97757"
+  },
+  "fallback": {
+    "file": "assets/providers/custom.svg",
+    "color": "#718096"
+  },
+  "kimi": {
+    "file": "assets/providers/kimi.svg",
+    "color": "#26313c"
+  },
+  "glm": {
+    "file": "assets/providers/glm.svg",
+    "color": "#26313c"
+  },
+  "grok": {
+    "file": "assets/providers/grok.svg",
+    "color": "#26313c"
+  },
+  "gemini": {
+    "file": "assets/providers/gemini.svg",
+    "color": "#4285f4"
+  }
+}

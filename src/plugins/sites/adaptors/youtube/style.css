@@ -1,0 +1,76 @@
+/* Video list titles grow to fit translations; the main playback-page title is outside the translation scope. */
+[data-litesay-site='youtube']
+  :is(ytd-rich-grid-media, ytd-video-renderer, ytd-compact-video-renderer, ytd-grid-video-renderer)
+  #video-title:has([data-litesay-translation]),
+[data-litesay-site='youtube']
+  :is(yt-lockup-view-model, yt-lockup-metadata-view-model)
+  :is(h3, h3 a):has([data-litesay-translation]) {
+  height: auto !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  overflow: visible !important;
+}
+
+/* Search summaries retain one source line and one translation line, truncating each independently. */
+[data-litesay-site='youtube']
+  ytd-video-renderer
+  :is(.metadata-snippet-container, .metadata-snippet-container-one-line, #description-text):has(
+    [data-litesay-translation]
+  ),
+[data-litesay-site='youtube']
+  ytd-video-renderer
+  :is(.metadata-snippet-text, .metadata-snippet-text-navigation):has([data-litesay-translation]) {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Expanded chapter titles grow to fit translations; summaries and collapsed chapter previews keep their layout. */
+[data-litesay-site='youtube']
+  ytd-video-renderer
+  ytd-macro-markers-list-item-renderer
+  :is(h3, h4):has([data-litesay-translation]) {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+[data-litesay-site='youtube'] [data-litesay-inline-link] {
+  color: var(--yt-spec-call-to-action, #065fd4);
+  text-decoration: none;
+}
+[data-litesay-site='youtube'] [data-litesay-inline-link]:has(img) {
+  display: inline-block;
+  background: var(--yt-spec-badge-chip-background, #e5e5e5);
+  border-radius: 1em;
+  padding: 0 0.4em;
+}
+[data-litesay-site='youtube']
+  ytd-video-renderer
+  :is(#description-text, .metadata-snippet-text, .metadata-snippet-text-navigation)
+  > [data-litesay-translation='done'] {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Collapsed previews have gradient masks that cover appended translations; expand only previews with translations. */
+[data-litesay-site='youtube']
+  ytd-watch-metadata
+  #description-inline-expander:not([is-expanded])
+  #snippet:has([data-litesay-translation]) {
+  max-height: none !important;
+  overflow: visible !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}

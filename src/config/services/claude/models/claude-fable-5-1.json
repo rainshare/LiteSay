@@ -1,0 +1,55 @@
+{
+  "id": "claude-fable-5-1",
+  "label": "Claude Fable 5.1",
+  "updatedAt": "2026-10-05",
+  "sources": [
+    "https://platform.claude.com/docs/en/models/overview",
+    "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+    "https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting"
+  ],
+  "reasoning": {
+    "defaultLevel": "low",
+    "notice": "services.reasoningRequired",
+    "levels": [
+      {
+        "id": "low",
+        "label": "services.reasoningLow",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "adaptive"
+          },
+          "output_config": {
+            "effort": "low"
+          }
+        }
+      },
+      {
+        "id": "medium",
+        "label": "services.reasoningMedium",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "adaptive"
+          },
+          "output_config": {
+            "effort": "medium"
+          }
+        }
+      },
+      {
+        "id": "high",
+        "label": "services.reasoningHigh",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "adaptive"
+          },
+          "output_config": {
+            "effort": "high"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "glm-5.3",
+  "label": "GLM 5.3",
+  "updatedAt": "2026-10-05",
+  "sources": [
+    "https://docs.z.ai/guides/overview/quick-start",
+    "https://docs.z.ai/guides/llm/glm-5.3",
+    "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+    "https://docs.z.ai/guides/overview/pricing",
+    "https://docs.z.ai/api-reference/llm/chat-completion"
+  ],
+  "reasoning": {
+    "defaultLevel": "low",
+    "notice": "services.reasoningRequired",
+    "levels": [
+      {
+        "id": "low",
+        "label": "services.reasoningLow",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "enabled"
+          },
+          "reasoning_effort": "low"
+        }
+      },
+      {
+        "id": "high",
+        "label": "services.reasoningHigh",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "enabled"
+          },
+          "reasoning_effort": "high"
+        }
+      },
+      {
+        "id": "max",
+        "label": "services.reasoningMax",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "enabled"
+          },
+          "reasoning_effort": "max"
+        }
+      }
+    ]
+  }
+}

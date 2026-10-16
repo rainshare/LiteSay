@@ -1,0 +1,32 @@
+{
+  "close": {
+    "file": "assets/ui/close.svg"
+  },
+  "display-bilingual": {
+    "file": "assets/ui/display-bilingual.svg"
+  },
+  "display-translation": {
+    "file": "assets/ui/display-translation.svg"
+  },
+  "hover": {
+    "file": "assets/ui/hover.svg"
+  },
+  "selection": {
+    "file": "assets/ui/selection.svg"
+  },
+  "translate": {
+    "file": "assets/ui/translate.svg"
+  },
+  "settings": {
+    "file": "assets/ui/settings.svg"
+  },
+  "services": {
+    "file": "assets/ui/services.svg"
+  },
+  "sites": {
+    "file": "assets/ui/sites.svg"
+  },
+  "info": {
+    "file": "assets/ui/info.svg"
+  }
+}

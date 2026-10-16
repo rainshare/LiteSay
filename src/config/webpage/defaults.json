@@ -1,0 +1,15 @@
+{
+  "provider": "microsoft",
+  "sourceLanguage": "auto",
+  "targetLanguage": "zh-CN",
+  "selectionTranslation": true,
+  "selectionTrigger": "dot",
+  "hoverTranslation": false,
+  "hoverTrigger": "ctrl",
+  "hoverAction": "toggle",
+  "displayMode": "bilingual",
+  "translationStyle": "none",
+  "highlightSimilarLanguages": true,
+  "configRevision": 0,
+  "customApiIcon": "openai"
+}

@@ -1,0 +1,9 @@
+{
+  "kind": "llm",
+  "label": "OpenAI",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "model": "gpt-6-luna",
+  "thinkingProtocol": "model",
+  "needsKey": true,
+  "description": "OpenAI official API."
+}

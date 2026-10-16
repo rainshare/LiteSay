@@ -1,0 +1,9 @@
+{
+  "kind": "llm",
+  "label": "Grok",
+  "endpoint": "https://api.x.ai/v1/chat/completions",
+  "model": "grok-4.7",
+  "thinkingProtocol": "model",
+  "needsKey": true,
+  "description": "Grok official API."
+}

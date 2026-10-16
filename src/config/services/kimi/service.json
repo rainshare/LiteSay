@@ -1,0 +1,9 @@
+{
+  "kind": "llm",
+  "label": "Kimi",
+  "endpoint": "https://api.moonshot.cn/v1/chat/completions",
+  "model": "kimi-k2.6",
+  "thinkingProtocol": "model",
+  "needsKey": true,
+  "description": "Kimi official API."
+}

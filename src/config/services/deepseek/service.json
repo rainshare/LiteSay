@@ -1,0 +1,9 @@
+{
+  "kind": "llm",
+  "label": "DeepSeek",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-flash",
+  "thinkingProtocol": "model",
+  "needsKey": true,
+  "description": "DeepSeek official API."
+}

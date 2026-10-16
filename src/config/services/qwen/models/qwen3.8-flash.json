@@ -1,0 +1,52 @@
+{
+  "id": "qwen3.8-flash",
+  "label": "Qwen3.8 Flash",
+  "updatedAt": "2026-10-05",
+  "sources": [
+    "https://help.aliyun.com/zh/model-studio/models",
+    "https://help.aliyun.com/zh/model-studio/qwen3-8-flash",
+    "https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions",
+    "https://help.aliyun.com/zh/model-studio/deep-thinking"
+  ],
+  "reasoning": {
+    "defaultLevel": "off",
+    "notice": "services.reasoningHelp",
+    "levels": [
+      {
+        "id": "off",
+        "label": "services.reasoningOff",
+        "enabled": false,
+        "body": {
+          "enable_thinking": false
+        }
+      },
+      {
+        "id": "low",
+        "label": "services.reasoningLow",
+        "enabled": true,
+        "body": {
+          "enable_thinking": true,
+          "thinking_budget": 1024
+        }
+      },
+      {
+        "id": "medium",
+        "label": "services.reasoningMedium",
+        "enabled": true,
+        "body": {
+          "enable_thinking": true,
+          "thinking_budget": 4096
+        }
+      },
+      {
+        "id": "high",
+        "label": "services.reasoningHigh",
+        "enabled": true,
+        "body": {
+          "enable_thinking": true,
+          "thinking_budget": 8192
+        }
+      }
+    ]
+  }
+}

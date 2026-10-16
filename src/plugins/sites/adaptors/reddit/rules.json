@@ -1,0 +1,46 @@
+{
+  "id": "reddit",
+  "label": "Reddit",
+  "description": "Translate post titles, text, comments, and the right sidebar. Left sidebar regions are optional.",
+  "domains": ["reddit.com"],
+  "defaultEnabled": true,
+  "excludedSelector": "nav,footer,[role=\"navigation\"],[role=\"contentinfo\"],#left-sidebar-container,reddit-sidebar-nav,[slot=\"credit-bar\"],[slot=\"commentMeta\"],[slot=\"post-flair\"],shreddit-post-flair,time,.tagline,.flat-list,.linkflairlabel,[slot=\"footer\"],a[href*=\"/policies/\"],a[href*=\"/rules\"],a[href*=\"privacy\" i],a[href*=\"user-agreement\" i],a[href*=\"useragreement\" i],a[href*=\"accessibility\" i]",
+  "contentExcludedSelector": "[role=\"button\"],shreddit-post-overflow-menu,shreddit-comment-action-row,faceplate-number,faceplate-timeago",
+  "bodySelector": "shreddit-post :is([slot=\"title\"],a[id^=\"post-title\"],h1,[slot=\"text-body\"],[data-post-click-location=\"text-body\"],[data-testid=\"post-text-container\"]),shreddit-comment :is([slot=\"comment\"],[slot=\"comment-body\"],.md,[id$=\"-comment-rtjson-content\"]),shreddit-comments-page :is([slot=\"title\"],[slot=\"text-body\"],[id$=\"-post-rtjson-content\"]),:is(#right-sidebar-container,shreddit-sidebar,[role=\"complementary\"],.side) :is(h1,h2,h3,h4,p,blockquote,summary,.md,a[href*=\"/comments/\"]),.content .thing.link .entry a.title,.content .thing.link .usertext-body .md,.content .thing.comment .usertext-body .md",
+  "preserveMentions": false,
+  "preserveEmojiImages": true,
+  "sections": [
+    {
+      "id": "games",
+      "label": "Translate games",
+      "description": "Game titles and links",
+      "defaultEnabled": false,
+      "bodySelector": ":is(#left-sidebar-container,reddit-sidebar-nav) :is(summary[aria-controls=\"games_section\"],[noun=\"games_drawer\"] :is(a,h2,h3),#games_section :is(a,h2,h3))",
+      "excludedSelector": "footer,[role=\"contentinfo\"],[slot=\"footer\"],a[href*=\"/policies/\"],a[href*=\"/rules\"],a[href*=\"privacy\" i],a[href*=\"user-agreement\" i],a[href*=\"useragreement\" i],a[href*=\"accessibility\" i],a[href=\"https://redditinc.com\"],a[href=\"https://redditinc.com/\"]"
+    },
+    {
+      "id": "feeds",
+      "label": "Translate custom feeds",
+      "description": "Custom feeds and their creation links",
+      "defaultEnabled": false,
+      "bodySelector": ":is(#left-sidebar-container,reddit-sidebar-nav) :is(summary[aria-controls=\"multireddits_section\"],#multireddits_section :is(a,h2,h3))",
+      "excludedSelector": "footer,[role=\"contentinfo\"],[slot=\"footer\"],a[href*=\"/policies/\"],a[href*=\"/rules\"],a[href*=\"privacy\" i],a[href*=\"user-agreement\" i],a[href*=\"useragreement\" i],a[href*=\"accessibility\" i],a[href=\"https://redditinc.com\"],a[href=\"https://redditinc.com/\"]"
+    },
+    {
+      "id": "communities",
+      "label": "Translate communities",
+      "description": "Community lists and management links",
+      "defaultEnabled": false,
+      "bodySelector": ":is(#left-sidebar-container,reddit-sidebar-nav) :is(summary[aria-controls=\"communities_section\"],#communities_section :is(a,h2,h3),a.left-nav-manage-communities-link)",
+      "excludedSelector": "footer,[role=\"contentinfo\"],[slot=\"footer\"],a[href*=\"/policies/\"],a[href*=\"/rules\"],a[href*=\"privacy\" i],a[href*=\"user-agreement\" i],a[href*=\"useragreement\" i],a[href*=\"accessibility\" i],a[href=\"https://redditinc.com\"],a[href=\"https://redditinc.com/\"]"
+    },
+    {
+      "id": "resources",
+      "label": "Translate resources",
+      "description": "Resource links; privacy and legal links are always skipped",
+      "defaultEnabled": false,
+      "bodySelector": ":is(#left-sidebar-container,reddit-sidebar-nav) :is(summary[aria-controls=\"RESOURCES\"],summary:has([noun=\"resources_menu\"]),#RESOURCES :is(a,h2,h3),details:has(>summary [noun=\"resources_menu\"]) :is(a,h2,h3))",
+      "excludedSelector": "footer,[role=\"contentinfo\"],[slot=\"footer\"],a[href*=\"/policies/\"],a[href*=\"/rules\"],a[href*=\"privacy\" i],a[href*=\"user-agreement\" i],a[href*=\"useragreement\" i],a[href*=\"accessibility\" i],a[href=\"https://redditinc.com\"],a[href=\"https://redditinc.com/\"]"
+    }
+  ]
+}

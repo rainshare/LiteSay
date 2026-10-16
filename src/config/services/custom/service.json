@@ -1,0 +1,10 @@
+{
+  "kind": "llm",
+  "label": "Custom API",
+  "endpoint": "http://127.0.0.1:11434/v1/chat/completions",
+  "model": "",
+  "thinkingProtocol": "none",
+  "needsKey": false,
+  "description": "OpenAI / Claude compatible API.",
+  "protocol": "openai"
+}

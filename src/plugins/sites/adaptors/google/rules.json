@@ -1,0 +1,24 @@
+{
+  "id": "google",
+  "label": "Google",
+  "description": "Translate search results, AI Overview content, and the right sidebar. Preserve search categories, tools, and the search box.",
+  "domains": [
+    "google.com",
+    "google.com.hk",
+    "google.com.tw",
+    "google.co.jp",
+    "google.co.uk",
+    "google.de",
+    "google.fr",
+    "google.ca",
+    "google.com.au"
+  ],
+  "components": ["hyperlinks", "inline-formatting", "inline-widgets"],
+  "defaultEnabled": true,
+  "bodySelector": "main,[role=\"main\"],#main,#search,#rso,#rhs,.n6owBd",
+  "excludedSelector": "header,nav,footer,[role=\"navigation\"],[role=\"contentinfo\"],#searchform,#gb,#hdtb,#top_nav,#appbar,#fbar,#search-tools,[jsname=\"haAclf\"],.sr-only,cite",
+  "inlinePreserveSelector": ".notranslate:has(a[href])",
+  "contentExcludedSelector": "button,[role=\"button\"],[role=\"tablist\"],[role=\"tab\"]",
+  "preserveMentions": false,
+  "preserveEmojiImages": false
+}

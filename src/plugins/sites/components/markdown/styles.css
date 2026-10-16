@@ -1,0 +1,11 @@
+/* The website lays out Markdown; translations inherit paragraph alignment, font size, and line height. */
+.markdown-body [data-litesay-translation] {
+  text-align: inherit !important;
+}
+.markdown-body [data-litesay-inline-link] {
+  overflow-wrap: anywhere;
+}
+.markdown-body [data-litesay-inline-link] :is(img, svg) {
+  max-width: 100%;
+  vertical-align: middle;
+}

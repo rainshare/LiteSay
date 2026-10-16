@@ -1,0 +1,24 @@
+{
+  "id": "kimi-k2.7-code",
+  "label": "Kimi K2.7 Code",
+  "updatedAt": "2026-10-05",
+  "sources": [
+    "https://platform.kimi.com/docs/models",
+    "https://platform.kimi.com/docs/pricing/chat",
+    "https://platform.kimi.com/",
+    "https://platform.kimi.com/docs/get-api-key",
+    "https://platform.kimi.com/docs/guide/use-thinking-models"
+  ],
+  "reasoning": {
+    "defaultLevel": "auto",
+    "notice": "services.reasoningFixed",
+    "levels": [
+      {
+        "id": "auto",
+        "label": "services.reasoningAuto",
+        "enabled": true,
+        "body": {}
+      }
+    ]
+  }
+}

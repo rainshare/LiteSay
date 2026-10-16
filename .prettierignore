@@ -1,0 +1,15 @@
+node_modules/
+work/
+dist/
+test-results/
+src/**/*.content.js
+src/config/services/catalog.js
+src/config/webpage/defaults.js
+src/config/icons/catalog.js
+src/i18n/messages/catalog.js
+src/i18n/languages/catalog.js
+src/plugins/sites/site-config/
+src/utils/tokenizer/vendor/
+pnpm-lock.yaml
+# Preserve original bytes and inline whitespace in user-provided website fixtures.
+tests/fixtures/google/*.html

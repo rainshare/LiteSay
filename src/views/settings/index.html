@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LiteSay · Settings</title>
+    <link rel="icon" href="../../assets/icons/icon-32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../../components/capsule-slider/styles.css" />
+    <link rel="stylesheet" href="../../components/popover/styles.css" />
+    <link rel="stylesheet" href="../../components/site-rules/editor.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="../../assets/icons/icon-48.png" alt="" width="38" height="38" />
+        <div>LiteSay<span>Understand every page with ease</span></div>
+      </div>
+      <nav aria-label="Settings navigation">
+        <button class="nav active" data-panel="basic" aria-current="page">
+          <span>⚙</span>General
+        </button>
+        <button class="nav" data-panel="services"><span>◈</span>Translation services</button>
+        <button class="nav" data-panel="filters"><span>⏷</span>Site rules</button>
+        <button class="nav" data-panel="about"><span>ⓘ</span>Help</button>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="version">V0.1.0</span>
+        <p>Simple, lightweight web translation</p>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <span>Web translation settings</span>
+        <div class="topbar-actions">
+          <div id="ui-locale"></div>
+          <span id="save-state" class="saved">Local settings</span>
+        </div>
+      </header>
+      <form id="settings-form">
+        <section id="basic" class="panel">
+          <div class="title">
+            <h1>General</h1>
+            <p>Choose your languages and explore the world.</p>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="source">Source language</label>
+              <p>The page's original language, or let the service detect it</p>
+            </div>
+            <div class="control">
+              <select id="source"></select
+              ><input
+                id="source-custom"
+                class="custom"
+                placeholder="Language code, e.g. en"
+                aria-label="Custom source language"
+                hidden
+              />
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="target">Target language</label>
+              <p>The language you want to read</p>
+            </div>
+            <div class="control">
+              <select id="target"></select
+              ><input
+                id="target-custom"
+                class="custom"
+                placeholder="Language code, e.g. zh-CN"
+                aria-label="Custom target language"
+                hidden
+              />
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="provider">Translation services</label>
+              <p>Use a free service or your configured model API</p>
+            </div>
+            <div class="control">
+              <select id="provider"></select
+              ><button class="text-button" type="button" data-go="services">View services →</button>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="display-mode">Translation preferences</label>
+              <p>Keep the original alongside translations, or show translations only</p>
+            </div>
+            <div class="control">
+              <select id="display-mode">
+                <option value="bilingual">Bilingual</option>
+                <option value="translation-only">Translation only</option>
+              </select>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="highlight-similar">Background for related languages</label>
+              <p>
+                Distinguish translations between related languages with a subtle background.
+                Disabled when the style is None.
+              </p>
+            </div>
+            <label class="switch"
+              ><input
+                id="highlight-similar"
+                type="checkbox"
+                role="switch"
+                aria-label="Background for related languages" /><span aria-hidden="true"></span
+            ></label>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="translation-style">Translation style</label>
+              <p>Choose an underline or subtle background; preview below</p>
+            </div>
+            <div class="control">
+              <select id="translation-style">
+                <option value="none">None</option>
+                <option value="underline">Underline</option>
+                <option value="highlight">Subtle background</option>
+              </select>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="selection-translation">Selection translation</label>
+              <p>Select text, pause briefly, then click the pink dot to translate</p>
+            </div>
+            <label class="switch"
+              ><input
+                id="selection-translation"
+                type="checkbox"
+                role="switch"
+                aria-label="Enable selection translation" /><span aria-hidden="true"></span
+            ></label>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="hover-translation">Hover translation</label>
+              <p>
+                Off by default. Hold Ctrl and hover to translate or restore a paragraph. Simplified
+                and Traditional Chinese are skipped.
+              </p>
+            </div>
+            <label class="switch"
+              ><input
+                id="hover-translation"
+                type="checkbox"
+                role="switch"
+                aria-label="Enable hover translation" /><span aria-hidden="true"></span
+            ></label>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="selection-trigger">Selection trigger</label>
+              <p>How to open the card after selecting text; independent of hover translation</p>
+            </div>
+            <div class="control">
+              <select id="selection-trigger">
+                <option value="dot">Show a dot</option>
+                <option value="icon">Show an icon</option>
+                <option value="direct">Translate immediately</option>
+                <option value="ctrl">+ Ctrl</option>
+                <option value="alt">+ Alt</option>
+                <option value="shift">+ Shift</option>
+              </select>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="hover-trigger">Hover trigger</label>
+              <p>Applies only to the paragraph under the pointer</p>
+            </div>
+            <div class="control">
+              <select id="hover-trigger">
+                <option value="ctrl">+ Ctrl</option>
+                <option value="shift">+ Shift</option>
+                <option value="alt">+ Alt</option>
+                <option value="hold">Hold left mouse button</option>
+                <option value="direct">Translate on hover</option>
+              </select>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <label for="hover-action">Hover action</label>
+              <p>Translate or restore only the current paragraph</p>
+            </div>
+            <div class="control">
+              <select id="hover-action">
+                <option value="toggle">Translate / Restore</option>
+                <option value="translate">Translate only</option>
+                <option value="restore">Restore only</option>
+              </select>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <span class="setting-label">Translation cache</span>
+              <p id="cache-state">
+                Reuse translations after reloading, stored by service and language
+              </p>
+            </div>
+            <button id="clear-cache" type="button" class="secondary">Clear cache</button>
+          </div>
+          <div class="preview">
+            <div class="preview-label">
+              <span>Reading preview</span
+              ><span class="preview-note">Sample · Not a live translation</span>
+            </div>
+            <p class="original">
+              The world is a book, and those who do not travel read only one page.
+            </p>
+            <p class="translated">
+              Le monde est un livre, et ceux qui ne voyagent pas ne lisent qu'une page.
+            </p>
+          </div>
+        </section>
+        <section id="services" class="panel" hidden>
+          <div class="title">
+            <h1>Translation services list</h1>
+            <p>Select a service to view its details and test the connection.</p>
+          </div>
+          <div class="services-layout">
+            <div class="service-list" aria-label="Translation services">
+              <div class="service-group">Free services <span>2 services</span></div>
+              <button type="button" class="service-item" data-provider="google">
+                <span class="provider-logo google" aria-hidden="true"></span>
+                <span>Google Translate</span><small class="default-label"></small>
+              </button>
+              <button type="button" class="service-item active" data-provider="microsoft">
+                <span class="provider-logo microsoft" aria-hidden="true"></span>
+                <span>Microsoft Translator</span><small class="default-label"></small>
+              </button>
+            </div>
+            <div class="service-detail">
+              <div class="service-detail-header">
+                <div class="service-heading">
+                  <span
+                    id="detail-microsoft"
+                    class="provider-logo microsoft"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    id="detail-google"
+                    class="provider-logo google"
+                    aria-hidden="true"
+                    hidden
+                  ></span>
+                  <span
+                    id="detail-other"
+                    class="provider-logo monogram"
+                    aria-hidden="true"
+                    hidden
+                  ></span>
+                  <h2 id="service-title">Microsoft Translator</h2>
+                </div>
+                <button id="test" class="test-link" type="button">Test service ↗</button>
+              </div>
+              <p id="service-description" class="service-description"></p>
+              <div class="service-detail-row">
+                <span>Service type</span><strong id="service-type">Free web translation</strong>
+              </div>
+              <div id="free-key-note" class="service-detail-row">
+                <span>API Key</span><strong>Not required</strong>
+              </div>
+              <div id="llm-settings" hidden>
+                <label class="field-label" for="api-key"
+                  >API Key <span id="key-status"></span
+                ></label>
+                <input
+                  id="api-key"
+                  type="password"
+                  autocomplete="off"
+                  spellcheck="false"
+                  placeholder="Enter API Key"
+                />
+                <div class="key-actions">
+                  <span>Encrypted when saved. Leave blank to keep the saved key.</span
+                  ><button id="clear-key" type="button" class="text-button">Clear saved key</button>
+                </div>
+                <label class="field-help"
+                  ><input id="show-key" type="checkbox" /> Show the key being entered</label
+                >
+                <div id="custom-settings" hidden>
+                  <label class="field-label" for="api-protocol">API protocol</label>
+                  <select id="api-protocol">
+                    <option value="openai">OpenAI Chat Completions</option>
+                    <option value="claude">Claude Messages</option>
+                  </select>
+                  <label class="field-label" for="api-icon">API icon</label>
+                  <select id="api-icon">
+                    <option value="openai" data-i18n-ignore>OpenAI</option>
+                    <option value="claude" data-i18n-ignore>Claude</option>
+                    <option value="deepseek" data-i18n-ignore>DeepSeek</option>
+                    <option value="qwen" data-i18n-ignore>Qwen</option>
+                    <option value="kimi" data-i18n-ignore>Kimi</option>
+                    <option value="glm" data-i18n-ignore>GLM</option>
+                    <option value="grok" data-i18n-ignore>Grok</option>
+                    <option value="fallback">Other</option>
+                  </select>
+                  <div id="model-custom-settings"></div>
+                </div>
+                <button id="model-control-trigger" class="model-control-trigger" type="button">
+                  <span id="model-control-name" data-i18n-ignore></span>
+                  <span id="model-control-level"></span>
+                  <span class="model-control-chevron" aria-hidden="true"></span>
+                </button>
+                <div
+                  id="model-control-panel"
+                  class="litesay-popover model-control-panel"
+                  hidden
+                  role="dialog"
+                  aria-label="Model and reasoning settings"
+                >
+                  <div class="model-control-heading">
+                    <strong id="model-popup-level"></strong>
+                    <button
+                      id="model-popup-choose"
+                      type="button"
+                      aria-controls="model-choice-settings"
+                      aria-expanded="false"
+                    >
+                      <span id="model-popup-name" data-i18n-ignore></span
+                      ><span class="model-control-chevron" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div id="model-popup-settings">
+                    <div id="model-choice-settings" hidden>
+                      <div class="model-heading">
+                        <label id="api-model-label" class="field-label" for="api-model-choice"
+                          >Select model</label
+                        >
+                        <button id="reset-model" type="button" class="text-button">
+                          Reset model
+                        </button>
+                      </div>
+                      <div id="api-model-options"><select id="api-model-choice"></select></div>
+                      <div id="api-model-custom">
+                        <input
+                          id="api-model"
+                          spellcheck="false"
+                          placeholder="Model name provided by your service"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div id="thinking-row" class="thinking-row" hidden>
+                    <div>
+                      <label for="thinking">Reasoning effort</label>
+                      <p id="thinking-help">Reasoning is off by default for faster translation</p>
+                    </div>
+                    <div id="thinking-control"></div>
+                  </div>
+                </div>
+                <details id="api-advanced">
+                  <summary>Endpoint and model</summary>
+                  <label class="field-label" for="api-endpoint">API endpoint</label>
+                  <input
+                    id="api-endpoint"
+                    type="url"
+                    spellcheck="false"
+                    placeholder="Full Chat Completions URL"
+                  />
+                  <div id="custom-protocol" hidden>
+                    <label class="field-label" for="thinking-protocol">Reasoning protocol</label>
+                    <select id="thinking-protocol"></select>
+                    <p class="field-help">
+                      Choose the protocol supported by your service. Local model behavior depends on
+                      its server.
+                    </p>
+                  </div>
+                </details>
+                <p class="field-help">
+                  Testing sends sample text to this service. Model API charges are billed by the
+                  provider.
+                </p>
+              </div>
+              <section id="api-usage" class="api-usage" hidden>
+                <div class="api-usage-heading">
+                  <h3>API token usage</h3>
+                  <div>
+                    <button type="button" class="text-button" data-usage-refresh>
+                      Refresh usage</button
+                    ><button type="button" class="text-button" data-usage-reset>
+                      Clear service usage
+                    </button>
+                  </div>
+                </div>
+                <dl data-usage-totals>
+                  <div>
+                    <dt>Input tokens</dt>
+                    <dd data-count="input">0</dd>
+                  </div>
+                  <div>
+                    <dt>Output tokens</dt>
+                    <dd data-count="output">0</dd>
+                  </div>
+                  <div>
+                    <dt>Total tokens</dt>
+                    <dd data-count="total">0</dd>
+                  </div>
+                </dl>
+                <div class="api-usage-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Model</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Total</th>
+                        <th>Requests</th>
+                        <th>Source</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+                <p class="field-help" data-usage-empty>No usage recorded</p>
+                <p class="field-help" data-usage-note></p>
+              </section>
+              <button id="use-provider" class="secondary" type="button">Set as default</button>
+              <p id="test-result" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+        </section>
+        <section id="filters" class="panel" hidden>
+          <div class="title">
+            <h1>Site rules</h1>
+            <p>Enable rules by site. Other sites use the default translation workflow.</p>
+          </div>
+          <div class="site-rule-toolbar">
+            <span id="site-rule-source" class="site-rule-source">Default rules</span>
+            <button id="reset-site-rules" class="rule-button" type="button">
+              Restore defaults
+            </button>
+          </div>
+          <div id="site-rule-list"></div>
+          <div class="site-rule-add-row">
+            <button id="add-site-rule" class="rule-button" type="button">Add site rule</button>
+          </div>
+          <p id="site-rule-error" class="site-rule-error" role="alert" hidden></p>
+          <div class="service-note">
+            Save rule applies changes immediately; Cancel discards the draft. Save settings to apply
+            site switches.
+          </div>
+        </section>
+        <section id="about" class="panel" hidden>
+          <div class="title">
+            <h1>Help</h1>
+            <p>One click to understand the page.</p>
+          </div>
+          <ol class="steps">
+            <li>
+              <strong>Open a web page</strong>
+              <p>Refresh open pages after installing or updating the extension.</p>
+            </li>
+            <li>
+              <strong>Click the pink translation button</strong>
+              <p>
+                Translate using your saved languages and service, or click the extension icon in the
+                browser toolbar.
+              </p>
+            </li>
+            <li>
+              <strong>Change languages and services</strong>
+              <p>Open the floating panel to choose source and target languages and a service.</p>
+            </li>
+            <li>
+              <strong>Selection translation</strong>
+              <p>
+                Select text with the mouse or keyboard, pause, then click the pink dot. Other
+                triggers include an icon, automatic translation, or a modifier key. Copy results
+                from the popup; press Escape or click outside to close.
+              </p>
+            </li>
+            <li>
+              <strong>Hover on text</strong>
+              <p>
+                Off by default. Hold Ctrl over foreign-language text to translate or restore one
+                paragraph. You can change the trigger and action in settings. Simplified and
+                Traditional Chinese are skipped.
+              </p>
+            </li>
+            <li>
+              <strong>Restore page</strong>
+              <p>
+                Click the pink button or green check again to remove translations, including while
+                translation is running.
+              </p>
+            </li>
+          </ol>
+          <div class="service-note">
+            Text in the main document is supported. Forms, code, editable areas, and hidden content
+            are skipped. Browser internal pages, extension stores, PDFs, image text, iframes, and
+            Shadow DOM content are not supported yet.
+          </div>
+          <p class="privacy">
+            Page, selection, and hover translation send the relevant text to your chosen service.
+            Settings and translations are stored locally; successful translations are kept for up to
+            7 days and evicted when the cache is full. You can clear the cache manually. API keys
+            are encrypted and never exposed to web pages.
+          </p>
+        </section>
+        <footer class="savebar">
+          <span id="message" role="status" aria-live="polite"
+            >Settings are stored in this browser</span
+          ><button id="save" class="primary" type="submit">Save settings</button>
+        </footer>
+      </form>
+    </main>
+  </body>
+</html>

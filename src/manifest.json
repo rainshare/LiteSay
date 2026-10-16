@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "version": "0.1.0",
+  "default_locale": "zh_CN",
+  "description": "__MSG_appDescription__",
+  "minimum_chrome_version": "110",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "platform/webextension/entry.js", "type": "module" },
+  "action": {
+    "default_title": "__MSG_actionTitle__",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "options_page": "views/settings/index.html",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": [
+        "platform/webextension/client.js",
+        "i18n/messages/catalog.content.js",
+        "i18n/languages/catalog.content.js",
+        "i18n/engine/locale.content.js",
+        "i18n/engine/index.content.js",
+        "components/locale-switch/index.content.js",
+        "i18n/languages/index.content.js",
+        "i18n/detection/target-language.content.js",
+        "components/select/index.content.js",
+        "config/icons/catalog.content.js",
+        "components/icons/index.content.js",
+        "plugins/sites/site-rules/runtime.js",
+        "plugins/sites/components/hyperlinks/index.js",
+        "plugins/sites/components/inline-widgets/index.js",
+        "plugins/sites/components/inline-formatting/index.js",
+        "plugins/sites/components/rendered-text/index.js",
+        "utils/dom/blocks.js",
+        "components/translation/renderer.js",
+        "views/generated/templates.content.js",
+        "views/floating/index.js",
+        "utils/dom/text-targets.js",
+        "views/selection/index.js",
+        "plugins/registry.js",
+        "plugins/selection/index.js",
+        "plugins/hover/index.js",
+        "app/page/controller.js"
+      ],
+      "css": [
+        "components/translation/styles.css",
+        "plugins/sites/components/markdown/styles.css",
+        "plugins/sites/site-config/reddit/style.css",
+        "plugins/sites/site-config/youtube/style.css",
+        "plugins/sites/site-config/github/style.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" }
+}

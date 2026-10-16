@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "LiteSay",
+    "description": "The extension name shown in the browser toolbar and extension manager."
+  },
+  "appDescription": {
+    "message": "Understand every page. Translate whole pages and selected words in one click, choose your languages and translation API, and keep the original text.",
+    "description": "Short description shown in the extension store listing."
+  },
+  "actionTitle": {
+    "message": "LiteSay: Translate this page",
+    "description": "Tooltip for the toolbar button."
+  }
+}

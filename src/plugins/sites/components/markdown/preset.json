@@ -1,0 +1,7 @@
+{
+  "bodySelector": ".markdown-body",
+  "contentExcludedSelector": ".markdown-body a.anchor",
+  "inlineLinkSelector": ".markdown-body a[href]:not(.anchor)",
+  "translateInlineLinks": true,
+  "inlineFormatSelector": "strong,b,em,i,del,s,mark,code,kbd"
+}

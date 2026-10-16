@@ -1,0 +1,13 @@
+{
+  "label": "Do not send reasoning parameters",
+  "defaultLevel": "off",
+  "notice": "services.reasoningHelp",
+  "levels": [
+    {
+      "id": "off",
+      "label": "services.reasoningOff",
+      "enabled": false,
+      "body": {}
+    }
+  ]
+}

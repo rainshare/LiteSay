@@ -1,0 +1,64 @@
+[data-litesay-translation].litesay-translation {
+  display: block !important;
+  margin-top: 0.65em !important;
+  margin-bottom: 0.15em !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  text-align: inherit !important;
+  opacity: 1 !important;
+}
+/* Successful translation display is independent of requests; translation-only source nodes stay in the DOM and are unwrapped on restoration. */
+[data-litesay-original] {
+  display: none !important;
+}
+[data-litesay-translation='done'][data-litesay-display='translation-only'] {
+  margin-top: 0 !important;
+}
+[data-litesay-translation='done'][data-litesay-style='underline'] {
+  text-decoration: underline !important;
+  text-decoration-color: #eea7c3 !important;
+  text-underline-offset: 0.2em !important;
+}
+[data-litesay-translation='done'][data-litesay-style='highlight'],
+[data-litesay-translation='done'][data-litesay-similar]:not([data-litesay-style='none']) {
+  background-color: #fff0f6 !important;
+  border-radius: 5px !important;
+  padding: 0.1em 0.3em !important;
+}
+/* The none style always means plain text; old related-language markers or page span backgrounds must not override it. */
+[data-litesay-translation='done'][data-litesay-style='none'] {
+  background: transparent !important;
+  text-decoration: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+/* Loading nodes contain no text and stay at the source end; loading indicators must not shift page font size or layout. */
+[data-litesay-translation='pending'].litesay-translation {
+  display: inline-block !important;
+  width: 13px !important;
+  height: 13px !important;
+  padding: 0 !important;
+  margin: 0 0 0 0.5em !important;
+  border: 2px solid #c9d1d980 !important;
+  border-top-color: #81bfcf !important;
+  border-radius: 50% !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+  animation: litesay-translation-spin 0.8s linear infinite !important;
+}
+@keyframes litesay-translation-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-litesay-translation='pending'].litesay-translation {
+    animation: none !important;
+  }
+}

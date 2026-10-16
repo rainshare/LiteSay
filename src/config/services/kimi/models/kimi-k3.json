@@ -1,0 +1,42 @@
+{
+  "id": "kimi-k3",
+  "label": "Kimi K3",
+  "updatedAt": "2026-10-05",
+  "sources": [
+    "https://platform.kimi.com/docs/models",
+    "https://platform.kimi.com/docs/pricing/chat",
+    "https://platform.kimi.com/",
+    "https://platform.kimi.com/docs/get-api-key",
+    "https://platform.kimi.com/docs/guide/use-thinking-models"
+  ],
+  "reasoning": {
+    "defaultLevel": "low",
+    "notice": "services.reasoningRequired",
+    "levels": [
+      {
+        "id": "low",
+        "label": "services.reasoningLow",
+        "enabled": true,
+        "body": {
+          "reasoning_effort": "low"
+        }
+      },
+      {
+        "id": "high",
+        "label": "services.reasoningHigh",
+        "enabled": true,
+        "body": {
+          "reasoning_effort": "high"
+        }
+      },
+      {
+        "id": "max",
+        "label": "services.reasoningMax",
+        "enabled": true,
+        "body": {
+          "reasoning_effort": "max"
+        }
+      }
+    ]
+  }
+}

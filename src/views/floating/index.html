@@ -1,0 +1,172 @@
+<div class="dock">
+  <button
+    class="circle primary"
+    id="quick"
+    title="Translate this page"
+    aria-label="Translate this page"
+  >
+    {{icon:translate}}<span class="dot">✓</span>
+  </button>
+  <button
+    class="circle"
+    id="settings"
+    title="Translation settings"
+    aria-label="Translation settings"
+    aria-expanded="false"
+  >
+    {{icon:settings}}
+  </button>
+</div>
+<section class="panel" hidden aria-label="Web translation panel">
+  <div class="header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">{{icon:translate}}</span>
+      <div>LiteSay<small>Understand every page with ease</small></div>
+    </div>
+    <div class="header-actions">
+      <div id="ui-locale"></div>
+      <button class="close" aria-label="Close panel">×</button>
+    </div>
+  </div>
+  <div class="languages">
+    <div class="field">
+      <label class="label" for="source">Source language</label
+      ><select id="source"></select
+      ><input
+        class="custom"
+        id="source-custom"
+        placeholder="Language code, e.g. en"
+        aria-label="Custom source language"
+        hidden
+      />
+    </div>
+    <span class="arrow">→</span>
+    <div class="field">
+      <label class="label" for="target">Target language</label
+      ><select id="target"></select
+      ><input
+        class="custom"
+        id="target-custom"
+        placeholder="Language code, e.g. zh-CN"
+        aria-label="Custom target language"
+        hidden
+      />
+    </div>
+  </div>
+  <div class="service">
+    <label for="provider">Translation services</label
+    ><span id="service-icon" class="service-icon microsoft" aria-hidden="true"
+      ><i></i><i></i><i></i><i></i></span
+    ><select id="provider"></select
+    ><span class="badge">Free</span>
+  </div>
+  <p class="hint">Keep the original and add translations below each paragraph</p>
+  <div class="translate-row">
+    <button
+      class="display-toggle"
+      id="display-toggle"
+      aria-label="Switch display mode"
+      title="Switch bilingual / translation only"
+    >
+      {{icon:display-bilingual}}</button
+    ><button class="translate" id="translate">Translate (Alt+A)</button>
+  </div>
+  <div class="feature-grid">
+    <button id="hover-settings">{{icon:hover}}Hover on text</button
+    ><button id="selection-settings">{{icon:selection}}Selection translation</button>
+  </div>
+  <div class="status" role="status" aria-live="polite">Choose your languages and start reading</div>
+  <div class="footer">
+    <button class="link" id="options">Settings ↗</button><span class="version">V0.1.0</span
+    ><button class="link" id="more">More settings</button>
+  </div>
+  <div class="more-overlay" hidden>
+    <section class="more-card" role="dialog" aria-label="More settings">
+      <div class="more-header">
+        More settings<button class="more-close" aria-label="Close more settings">×</button>
+      </div>
+      <p class="more-label">Display mode</p>
+      <div class="mode-choices">
+        <button data-mode="bilingual">Bilingual</button
+        ><button data-mode="translation-only">Translation only</button>
+      </div>
+      <p class="more-label">Translation style</p>
+      <div class="service">
+        <select id="more-style" aria-label="Translation style">
+          <option value="none">None</option>
+          <option value="underline">Underline</option>
+          <option value="highlight">Subtle background</option>
+        </select>
+      </div>
+      <label class="switch-row" for="more-selection"
+        >Enable selection translation<input id="more-selection" type="checkbox" role="switch"
+      /></label>
+      <label class="switch-row" for="more-hover"
+        >Enable hover translation<input id="more-hover" type="checkbox" role="switch"
+      /></label>
+      <p class="hint">
+        Select text and click the dot to open a card. Hover translation applies to one paragraph and
+        is off by default.
+      </p>
+      <button class="link" id="cache-options">All settings and cache ↗</button>
+    </section>
+  </div>
+  <div class="more-overlay feature-modal" id="selection-modal" hidden>
+    <section class="more-card" role="dialog" aria-label="Selection settings">
+      <div class="more-header">
+        Selection translation<button class="feature-close" aria-label="Close selection settings">
+          ×
+        </button>
+      </div>
+      <label class="switch-row"
+        >Turn on selection translation<input id="selection-enabled" type="checkbox" role="switch"
+      /></label>
+      <div class="keyboard-card">
+        <div class="gesture-preview" aria-hidden="true">
+          {{icon:selection}}<span>+</span><span class="gesture-dot"></span><span>=</span>
+        </div>
+        <p>Translate selected text</p>
+      </div>
+      <p class="more-label">Trigger</p>
+      <div class="trigger-choices">
+        <button data-selection-trigger="direct">Translate immediately</button
+        ><button data-selection-trigger="icon">Show an icon</button
+        ><button data-selection-trigger="dot">Show a dot</button
+        ><button data-selection-trigger="ctrl">+ Ctrl</button
+        ><button data-selection-trigger="alt">+ Alt</button
+        ><button data-selection-trigger="shift">+ Shift</button>
+      </div>
+    </section>
+  </div>
+  <div class="more-overlay feature-modal" id="hover-modal" hidden>
+    <section class="more-card" role="dialog" aria-label="Hover settings">
+      <div class="more-header">
+        Hover settings<button class="feature-close" aria-label="Close hover settings">×</button>
+      </div>
+      <label class="switch-row"
+        >Turn on hover translation<input id="hover-enabled" type="checkbox" role="switch"
+      /></label>
+      <div class="keyboard-card">
+        <div class="gesture-preview" aria-hidden="true">
+          {{icon:hover}}<span>+</span><kbd id="hover-key">Ctrl</kbd><span>=</span>
+        </div>
+        <p>Translate / Restore this paragraph</p>
+      </div>
+      <p class="more-label">Trigger</p>
+      <div class="trigger-choices">
+        <button data-hover-trigger="ctrl">+ Ctrl</button
+        ><button data-hover-trigger="shift">+ Shift</button
+        ><button data-hover-trigger="alt">+ Alt</button
+        ><button data-hover-trigger="hold">Hold left mouse button</button
+        ><button data-hover-trigger="direct">Translate on hover</button>
+      </div>
+      <p class="more-label">Action</p>
+      <div class="trigger-choices">
+        <button data-hover-action="toggle">Translate or restore</button
+        ><button data-hover-action="translate">Translate only</button
+        ><button data-hover-action="restore">Restore only</button>
+      </div>
+    </section>
+  </div>
+</section>
+<div class="toast" role="status" hidden></div>

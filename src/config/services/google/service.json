@@ -1,0 +1,7 @@
+{
+  "kind": "free",
+  "order": 1,
+  "label": "Google Translate",
+  "description": "Google Translate · Free",
+  "detail": "Uses Google web translation with automatic language detection. Your network must be able to access Google Translate."
+}

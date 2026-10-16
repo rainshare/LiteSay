@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "轻译 · LiteSay",
+    "description": "工具栏与扩展管理页中显示的扩展名称。"
+  },
+  "appDescription": {
+    "message": "轻松读懂每一页。一键翻译网页与划词翻译，自选语言和翻译 API，保留网页原文。",
+    "description": "扩展商店列表页显示的简短说明。"
+  },
+  "actionTitle": {
+    "message": "轻译 · LiteSay：翻译当前网页",
+    "description": "工具栏按钮的悬停提示。"
+  }
+}

@@ -1,0 +1,31 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.npmrc
+.pypirc
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Browser profiles, test output, and build artifacts
+node_modules/
+work/
+test-results/
+dist/
+browser-profile/
+browser-profiles/
+playwright-report/
+*.sqlite
+*.sqlite3
+*.db
+*.crx
+*.zip
+*.log
+
+# Editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

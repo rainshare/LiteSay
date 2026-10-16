@@ -1,0 +1,59 @@
+{
+  "id": "claude-haiku-4-5",
+  "label": "Claude Haiku 4.5",
+  "updatedAt": "2026-10-05",
+  "sources": [
+    "https://platform.claude.com/docs/en/models/overview",
+    "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+    "https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting"
+  ],
+  "reasoning": {
+    "defaultLevel": "off",
+    "notice": "services.reasoningHelp",
+    "levels": [
+      {
+        "id": "off",
+        "label": "services.reasoningOff",
+        "enabled": false,
+        "body": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      },
+      {
+        "id": "low",
+        "label": "services.reasoningLow",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "enabled",
+            "budget_tokens": 1024
+          }
+        }
+      },
+      {
+        "id": "medium",
+        "label": "services.reasoningMedium",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "enabled",
+            "budget_tokens": 2048
+          }
+        }
+      },
+      {
+        "id": "high",
+        "label": "services.reasoningHigh",
+        "enabled": true,
+        "body": {
+          "thinking": {
+            "type": "enabled",
+            "budget_tokens": 4096
+          }
+        }
+      }
+    ]
+  }
+}

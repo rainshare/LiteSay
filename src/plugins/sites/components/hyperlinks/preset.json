@@ -1,0 +1,4 @@
+{
+  "inlineLinkSelector": "a[href]",
+  "translateInlineLinks": true
+}

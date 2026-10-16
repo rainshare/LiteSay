@@ -1,0 +1,12 @@
+{
+  "id": "x",
+  "label": "X / Twitter",
+  "description": "Translate posts, replies, and articles. Preserve mentions and emoji.",
+  "domains": ["x.com", "twitter.com"],
+  "defaultEnabled": true,
+  "excludedSelector": "[data-testid=\"User-Name\"],[data-testid=\"UserName\"],[data-testid=\"UserNames\"],[data-testid=\"sidebarColumn\"],[data-testid=\"trend\"],[data-testid=\"UserCell\"],time",
+  "contentExcludedSelector": "[role=\"button\"]",
+  "bodySelector": "[data-testid=\"tweetText\"],[data-testid=\"twitter-article-title\"],[data-testid=\"twitterArticleTitle\"],[data-testid=\"twitterArticleRichTextView\"]",
+  "preserveMentions": true,
+  "preserveEmojiImages": true
+}

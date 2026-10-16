@@ -1,0 +1,9 @@
+{
+  "kind": "llm",
+  "label": "GLM",
+  "endpoint": "https://api.z.ai/api/paas/v4/chat/completions",
+  "model": "glm-5.3-flash",
+  "thinkingProtocol": "model",
+  "needsKey": true,
+  "description": "GLM official API."
+}

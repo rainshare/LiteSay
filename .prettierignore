@@ -13,3 +13,4 @@ src/utils/tokenizer/vendor/
 pnpm-lock.yaml
 # Preserve original bytes and inline whitespace in user-provided website fixtures.
 tests/fixtures/google/*.html
+tests/fixtures/github/*.html
